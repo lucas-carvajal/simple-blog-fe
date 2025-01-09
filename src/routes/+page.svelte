@@ -32,8 +32,8 @@
     /* Replace the margin with a divider */
     :global(main > :not(:last-child)) {
         border-bottom: 1px solid #e5e5e5;
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
+        padding: 1rem 0;
+        margin: 1rem 0;
     }
 </style>
 

@@ -5,19 +5,28 @@
     export let titleColor = "black";
     export let subheadColor = "black";
     export let textColor = "black";
+    export let link = "https://google.com";
 </script>
 
-<div class="article-thumbnail">
+<a href={link} class="article-thumbnail">
     <h2 class="title" style="color: {titleColor}">{title}</h2>
     <h4 class="subhead" style="color: {subheadColor}">{subhead}</h4>
     <p class="preview-text" style="color: {textColor}">{previewText}</p>
-</div>
+</a>
 
 <style>
     .article-thumbnail {
         padding: 1.5rem;
         max-width: 600px;
         background-color: transparent;
+        display: block;
+        text-decoration: none;
+        transition: background-color 0.2s ease;
+        cursor: pointer;
+    }
+
+    .article-thumbnail:hover {
+        background-color: rgba(0, 0, 0, 0.03);
     }
 
     .title {
