@@ -9,8 +9,9 @@
     <header>
         <h1>{article.title}</h1>
         <h2>{article.subheader}</h2>
-        <time datetime={article.createdAt}>
-            {new Date(article.createdAt).toLocaleDateString('en-US', {
+        <time datetime={article.updatedAt}>
+            <span class="update-label">Last updated:</span>
+            {new Date(article.updatedAt).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric'
@@ -58,5 +59,9 @@
 
     p {
         margin: 1.5rem 0;
+    }
+
+    .update-label {
+        margin-right: 0.25rem;
     }
 </style> 
