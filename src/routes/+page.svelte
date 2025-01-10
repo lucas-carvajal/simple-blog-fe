@@ -2,8 +2,6 @@
     import ArticleThumbnail from '$lib/ArticleThumbnail.svelte';
 </script>
 
-<h1 class="page-title">Simple Blog</h1>
-
 <main>
     <ArticleThumbnail 
         title="Getting Started with SvelteKit"
@@ -25,13 +23,6 @@
 </main>
 
 <style>
-    .page-title {
-        text-align: center;
-        font-size: 2.5rem;
-        margin: 2rem 0;
-        font-weight: 700;
-    }
-
     main {
         max-width: 800px;
         margin: 0 auto;
