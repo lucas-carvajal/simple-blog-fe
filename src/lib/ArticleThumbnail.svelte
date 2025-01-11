@@ -17,7 +17,8 @@
 <style>
     .article-thumbnail {
         padding: 1.5rem;
-        max-width: 600px;
+        width: 100%;
+        box-sizing: border-box;
         background-color: transparent;
         display: block;
         text-decoration: none;
