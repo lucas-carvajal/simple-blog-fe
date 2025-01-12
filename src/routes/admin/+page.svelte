@@ -16,7 +16,7 @@
             title={article.title}
             subhead={article.subheader}
             previewText={article.content[0].text}
-            link={`/article/${article.id}`}
+            link={`admin/article/edit/${article.id}`}
             deleteFunction={() => handleDelete(article.id)}
         />
     {/each}

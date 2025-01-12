@@ -1,10 +1,14 @@
 <script>
     export let title = "";
     export let subheader = "";
-    export let content = [{ text: "" }];
+    export let content = [""];
+
+    export function getData() {
+        return { title, subheader, content };
+    }
 
     function addContentField() {
-        content = [...content, { text: "" }];
+        content = [...content, ""];
     }
 
     function removeContentField(index = undefined) {
