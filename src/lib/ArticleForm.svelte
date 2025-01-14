@@ -44,7 +44,6 @@
     <div class="content-fields">
         <h3 class="content-header">Content</h3>
         {#each content as section, i}
-            <!-- TODO: content does not show for existing articles!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
             <div class="content-field">
                 <textarea 
                     bind:value={section} 

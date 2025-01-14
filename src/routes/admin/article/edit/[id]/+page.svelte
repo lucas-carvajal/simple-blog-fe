@@ -8,3 +8,5 @@
 </script>
 
 <ArticleForm title={article.title} subheader={article.subheader} content={content} />
+
+<!-- TODO add update and cancel buttons and make em work -->
