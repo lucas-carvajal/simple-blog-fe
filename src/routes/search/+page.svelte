@@ -7,12 +7,6 @@
     let searchInput;
     let searchQuery = '';
 
-    function handleSearch(e) {
-        if (e.key === 'Enter') {
-            search();
-        }
-    }
-
     async function search() {
         if (searchQuery.length === 0) {
             location.reload();
@@ -24,18 +18,26 @@
     }
 
     onMount(() => searchInput.focus());
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        await search();
+        searchInput.blur();
+    }
 </script>
 
 <div class="search-page">
     <div class="search-container">
-        <input 
-            bind:this={searchInput}
-            type="text" 
-            bind:value={searchQuery}
-            placeholder="Search articles..."
-            class="search-input"
-            on:keydown={handleSearch}
-        />
+        <form on:submit={handleSubmit}>
+            <input 
+                bind:this={searchInput}
+                type="search"
+                bind:value={searchQuery}
+                placeholder="Search articles..."
+                class="search-input"
+            />
+        </form>
+        <!-- TODO iPhone search does not work -->
     </div>
 </div>
 
