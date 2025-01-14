@@ -5,38 +5,38 @@
     let form;
 
     async function handleSave() {
-    const data = form.getData();
-    
-    try {
-      const response = await fetch('http://localhost:8080/admin/article', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-            title: data.title,
-            subheader: data.subheader,
-            content: data.content.map((text, idx) => ({ 
-                metadata: {
-                    order: idx+1
-                },
-                text: text
-            }))
-        })
-      });
-      
-      if (response.ok) {
-        const result = await response.json();
-        goto('/admin');
-      } else {
-        console.error('Response status:', response.status);
+        const data = form.getData();
+        
+        try {
+        const response = await fetch('http://localhost:8080/admin/article', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                title: data.title,
+                subheader: data.subheader,
+                content: data.content.map((text, idx) => ({ 
+                    metadata: {
+                        order: idx+1
+                    },
+                    text: text
+                }))
+            })
+        });
+        
+        if (response.ok) {
+            const result = await response.json();
+            goto('/admin');
+        } else {
+            console.error('Response status:', response.status);
+            alert('Error saving article - please try again');
+        }
+        } catch (error) {
+        console.error('Error:', error);
         alert('Error saving article - please try again');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Error saving article - please try again');
+        }
     }
-  }
 </script>
 
 <div class="button-row">
