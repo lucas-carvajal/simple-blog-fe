@@ -33,12 +33,13 @@
 
     <div class="field">
         <label class="content-header" for="subheader">Subheader</label>
-        <input 
+        <textarea 
             id="subheader"
-            type="text" 
             bind:value={subheader} 
             placeholder="Article subheader"
-        />
+            rows="2"
+            class="subheader-input"
+        ></textarea>
     </div>
 
     <div class="content-fields">
@@ -148,6 +149,12 @@
         display: flex;
         justify-content: center;
         margin-top: 1rem;
+    }
+
+    .subheader-input {
+        resize: none;
+        height: 2rem;  /* Approximately 2 lines */
+        overflow: hidden;
     }
 </style>
 
