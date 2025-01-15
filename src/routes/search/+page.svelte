@@ -28,10 +28,12 @@
 
 <div class="search-page">
     <div class="search-container">
-        <form on:submit={handleSubmit}>
+        <form on:submit={handleSubmit} action="">
             <input 
                 bind:this={searchInput}
-                type="search"
+                type="text"
+                inputmode="search"
+                enterkeyhint="search"
                 bind:value={searchQuery}
                 placeholder="Search articles..."
                 class="search-input"
